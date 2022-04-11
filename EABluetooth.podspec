@@ -16,8 +16,8 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "EABluetooth"
-  spec.version      = "1.0.0"
-  spec.summary      = "A short description of EABluetooth."
+  spec.version      = "1.0.1"
+  spec.summary      = "Apex watch iOS ble tool"
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -25,6 +25,7 @@ Pod::Spec.new do |spec|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   spec.description  = <<-DESC
+  EABluetooth 是XXXX用来开发App的iOS工具包
                    DESC
 
   spec.homepage     = "https://github.com/EastApex/EABluetooth.git"
@@ -38,8 +39,8 @@ Pod::Spec.new do |spec|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  spec.license      = "MIT (example)"
-  # spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  # spec.license      = "MIT (example)"
+  spec.license      = { :type => "MIT", :file => "LICENSE" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -90,8 +91,9 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "EABluetooth", "EABluetooth/EABluetooth.framework/Headers/*.{h,m}"
-  # spec.exclude_files = "Classes/Exclude"
+  # spec.source_files  =  'EABluetooth.framework/Headers/*.h'
+  # spec.vendored_frameworks = '*.{framework}'
+  spec.vendored_frameworks = 'EABluetooth.framework'
 
   # spec.public_header_files = "Classes/**/*.h"
 
@@ -115,7 +117,7 @@ Pod::Spec.new do |spec|
   #  Link your library with frameworks, or libraries. Libraries do not include
   #  the lib prefix of their name.
   #
-  spec.frameworks = "Foundation", "CoreBluetooth"
+  spec.frameworks = 'Foundation', 'CoreBluetooth'
   # spec.framework  = "SomeFramework"
   # spec.frameworks = "SomeFramework", "AnotherFramework"
 
@@ -133,9 +135,12 @@ Pod::Spec.new do |spec|
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # spec.dependency "JSONKit", "~> 1.4"
-
+  # spec.dependency "Protobuf", "~> 3.14.0"
+  # spec.dependency "YYModel"
+  # spec.dependency "SAMKeychain"
+  # spec.dependency "Realm"
   # 项目配置，注意这里的SDK不支持模拟器
 # 如果多个字段就用逗号分开 { 'VALID_ARCHS' => 'x86_64 armv7 arm64', 'ENABLE_BITCODE' => 'NO' }
-spec.pod_target_xcconfig = { 'VALID_ARCHS' => 'armv7 arm64' }
+spec.pod_target_xcconfig = { "VALID_ARCHS" => "armv7 arm64" }
 
 end
