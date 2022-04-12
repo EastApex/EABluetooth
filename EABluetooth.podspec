@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "EABluetooth"
-  spec.version      = "1.0.1"
+  spec.version      = "1.0.2"
   spec.summary      = "Apex watch iOS ble tool"
 
   # This description is used to generate tags and improve search results.
@@ -28,7 +28,7 @@ Pod::Spec.new do |spec|
   EABluetooth 是XXXX用来开发App的iOS工具包
                    DESC
 
-  spec.homepage     = "https://github.com/EastApex/EABluetooth.git"
+  spec.homepage     = "https://github.com/EastApex/EABluetooth"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -80,7 +80,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "#{spec.homepage}", :tag => "#{spec.version}" }
+  spec.source       = { :git => "https://github.com/EastApex/EABluetooth.git", :tag => "#{spec.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -92,8 +92,13 @@ Pod::Spec.new do |spec|
   #
 
   # spec.source_files  =  'EABluetooth.framework/Headers/*.h'
+  # spec.vendored_frameworks = "EABluetooth.framework"
   # spec.vendored_frameworks = '*.{framework}'
-  spec.vendored_frameworks = 'EABluetooth.framework'
+  # spec.vendored_frameworks = 'EABluetooth.framework'
+
+
+  spec.vendored_frameworks = 'lib/*.framework'
+  spec.requires_arc = true
 
   # spec.public_header_files = "Classes/**/*.h"
 
@@ -141,6 +146,6 @@ Pod::Spec.new do |spec|
   # spec.dependency "Realm"
   # 项目配置，注意这里的SDK不支持模拟器
 # 如果多个字段就用逗号分开 { 'VALID_ARCHS' => 'x86_64 armv7 arm64', 'ENABLE_BITCODE' => 'NO' }
-spec.pod_target_xcconfig = { "VALID_ARCHS" => "armv7 arm64" }
+spec.pod_target_xcconfig = { "VALID_ARCHS" => "armv7" }
 
 end
