@@ -147,9 +147,9 @@ Pod::Spec.new do |spec|
 # 如果多个字段就用逗号分开 { 'VALID_ARCHS' => 'x86_64 armv7 arm64', 'ENABLE_BITCODE' => 'NO' }
 # spec.pod_target_xcconfig = { "VALID_ARCHS" => "armv7,arm64" }
 
-spec.pod_target_xcconfig =   {'OTHER_LDFLAGS' => ['-lObjC']} #设置other link flags -ObjC
+# spec.pod_target_xcconfig =   {'OTHER_LDFLAGS' => ['-lObjC']} #设置other link flags -ObjC
 spec.pod_target_xcconfig =   {'ENABLE_BITCODE' => 'NO'} #设置bitcode = no ，这些配置可以写在一个大括号呢，也可以单独写出来，其他的可以自行百度
-spec.pod_target_xcconfig =   { 'VALID_ARCHS' => 'armv7 arm64' }  # 支持的框架类型，真机、模拟器
+# spec.pod_target_xcconfig =   { 'VALID_ARCHS' => 'armv7 arm64' }  # 支持的框架类型，真机、模拟器
 spec.vendored_frameworks =   'lib/EABluetooth.framework' # 这个就是库文件，这样写，因为是在GitHub上管理，从项目目录开始读取的
 spec.requires_arc = true
 
