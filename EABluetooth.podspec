@@ -146,6 +146,6 @@ Pod::Spec.new do |spec|
   # spec.dependency "Realm"
   # 项目配置，注意这里的SDK不支持模拟器
 # 如果多个字段就用逗号分开 { 'VALID_ARCHS' => 'x86_64 armv7 arm64', 'ENABLE_BITCODE' => 'NO' }
-spec.pod_target_xcconfig = { "VALID_ARCHS" => "armv7" }
+spec.pod_target_xcconfig = { "VALID_ARCHS" => "armv7,arm64" }
 
 end
